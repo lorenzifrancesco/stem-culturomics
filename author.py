@@ -83,18 +83,20 @@ def main():
     author_names = pd.read_csv("input/names.csv")["name"].tolist()  # Adjust this based on the actual column name
 
     total_authors = len(author_names)
-    plt.figure(figsize=(10, total_authors * 4))
+    plt.figure(figsize=(8, total_authors * 4))
 
     for index, author_name in enumerate(author_names):
+      persevere = 1
+      while persevere:
         try:
             author_id = get_author_id(author_name)
-            time.sleep(np.random.exponential(1))
+            time.sleep(np.random.exponential(0.2))
             papers = get_papers_and_citations(author_id)
             citations = np.array([paper['citation_count'] for paper in papers if paper['citation_count'] > 1])
             
             print(f"\n{len(papers)} papers found for {author_name}!")
             plot_author_data(author_name, citations, index + 1, total_authors)
-            
+            persevere = 0
         except Exception as e:
             print(f"Error processing {author_name}: {e}")
 
