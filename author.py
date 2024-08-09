@@ -86,7 +86,7 @@ def main():
     plt.figure(figsize=(8, total_authors * 4))
 
     for index, author_name in enumerate(author_names):
-      persevere = 1
+      persevere = 10
       while persevere:
         try:
             author_id = get_author_id(author_name)
@@ -99,7 +99,7 @@ def main():
             persevere = 0
         except Exception as e:
             print(f"Error processing {author_name}: {e}")
-
+            persevere -= 1
     plt.tight_layout()
     plt.savefig("media/combined_authors_plot.pdf")  # Save the combined plot
     # plt.show()  # Show the combined plot
