@@ -1,8 +1,8 @@
 # stem-culturomics
-Bibliometric and scientometric advanced tool for meta-information retrieval and visualization, for not reinventing the wheel in STEM field research.
+Simple bibliometric tool for automating information retrieval and visualization about papers and authors.
 
-### TODO
-- connect to Google Scholar API
--- learn how to send queries and collect data
-- connect to Google Ngram viewer
-- build PCA for lexicographic search
+### Near term goals: go beyond h-index
+- Make the Semantic Scholar API work in the correct way
+
+### Long term goals
+- Collect all the citations by authors, and analyze their statistics.
